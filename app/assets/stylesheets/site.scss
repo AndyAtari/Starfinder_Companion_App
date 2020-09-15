@@ -23,10 +23,19 @@ a {
 /* Style the header */
 .header {
   background-color: #003b59;
-  padding: 20px;
+  padding: 0px;
   text-align: center;
   font-family: OCR A Std, monospace;
   color: #e25822;
+  padding-top: 10px;
+}
+
+.header a.left{
+  float: left;
+}
+
+img {
+  border-radius: 20%;
 }
 
 /* Style the top navigation bar */
@@ -60,7 +69,7 @@ a {
 
 Div.container {
   text-align: center;
-  padding: 363px;
+  padding: 358px;
   color: white;
   background-image: url('/starfinder_ship.jpg');
 }
