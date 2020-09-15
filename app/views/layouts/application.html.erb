@@ -9,6 +9,18 @@
      <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
   </head>
 
+  <div class="header">
+  <h1><%= link_to "STARFINDER COMPANION", root_url%></h1>
+  <p>To boldly go where no Starfinder has gone before.</p>
+  </div>
+
+  <div class="topnav">
+  <%= link_to "Link For Character", characters_path%>
+  <a href="#">Link For Games</a>
+  <a href="#">Link For Find a GM</a>
+  <a href="#" class="right">Sign In</a>
+</div>
+
   <body>
     <%= yield %>
   </body>
