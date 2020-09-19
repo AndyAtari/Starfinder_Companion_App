@@ -10,7 +10,7 @@ class CharactersController < ApplicationController
     end
 
     def new
-        @character = Character.new 
+        @character = Character.new
     end
 
     def edit
@@ -38,7 +38,7 @@ class CharactersController < ApplicationController
     end
 
     def character_params
-        params.require(:character).permit(:name)
+        params.require(:character).permit(:name, :race, :theme, :character_class, :class_level, :description)
     end
 
 

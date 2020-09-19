@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_14_224954) do
+ActiveRecord::Schema.define(version: 2020_09_19_214717) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "race"
+    t.string "description"
+    t.string "theme"
+    t.string "character_class"
+    t.integer "class_level"
   end
 
 end
