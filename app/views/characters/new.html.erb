@@ -1,0 +1,11 @@
+<u><h1>Your Starfinder Characters</h1></u>
+
+<%= form_for(@character) do |f| %>
+  <div class="form">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+    </div>
+    
+    <%= f.submit %>
+    
+<%end%>

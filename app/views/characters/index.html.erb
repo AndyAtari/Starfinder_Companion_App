@@ -1,1 +1,6 @@
 <u><h1>Your Starfinder Characters</h1></u>
+
+
+<%@characters.each do |character|%>
+    <li><%= link_to character.name, character_path(character)%></li>
+<%end%>

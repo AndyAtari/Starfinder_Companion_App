@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
     before_action :set_character, only: [:show, :edit, :update, :destroy] 
     
     def index
-
+        @characters = Character.all
     end
 
     def show
@@ -10,7 +10,7 @@ class CharactersController < ApplicationController
     end
 
     def new
-
+        @character = Character.new 
     end
 
     def edit
@@ -18,7 +18,9 @@ class CharactersController < ApplicationController
     end
 
     def create 
-
+        @character = Character.new(character_params)
+        @character.save 
+        redirect_to character_path(@character)
     end
 
     def update
