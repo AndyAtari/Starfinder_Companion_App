@@ -1,6 +1,21 @@
 <h1>CREATE A CHARACTER</h1>
 
 <%= form_for(@character) do |f| %>
+
+ <% if @character.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved:
+      </h2>
+
+      <ol>
+      <% @character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ol>
+    </div>
+  <% end %>
+
   <div class="form">
     <%= f.label :name %><br>
     <%= f.text_field :name, placeholder: 'Name'%>
@@ -8,21 +23,21 @@
 
   <div class="form">
     <%= f.label :race%><br>
-    <%= f.select :race, options_for_select(['','Android','Human','Kasatha','Lashunta','Shirren','Vesk','Ysoki'])%>
+    <%= f.select :race, (['Android','Human','Kasatha','Lashunta','Shirren','Vesk','Ysoki']), :include_blank => true%>
   </div>
 
   <div class="form">
     <%= f.label :theme%><br>
-    <%= f.text_field :theme, placeholder: 'Theme'%>
+    <%= f.select :theme, (['Ace Pilot', 'Bounty Hunter', 'Icon', 'Mercenary', 'Outlaw', 'Priest', 'Scholar', 'Spacefarer', 'Xenoseeker', 'Themeless']), :include_blank => true%>
   </div>
 
   <div class="form">
-    <%= f.label "Class"%><br>
-    <%= f.text_field :character_class, placeholder: 'Class'%>
+    <%= f.label :character_class%><br>
+    <%= f.select :character_class, (['Envoy', 'Mechanic', 'Mystic', 'Operative', 'Solarian', 'Soldier', 'Technomancer']), :include_blank => true%>
   </div>
 
   <div class="form">
-    <%= f.label "level"%><br>
+    <%= f.label :class_level%><br>
     <%= f.number_field :class_level, placeholder: 'Class Level'%>
   </div>
 
