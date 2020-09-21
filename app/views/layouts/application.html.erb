@@ -17,7 +17,8 @@
   </div>
 
   <div class="topnav">
-  <%= link_to "Link For Character", characters_path%>
+  <%= link_to "Characters", characters_path%>
+  <%= link_to "Create a Character", new_character_path%>
   <a href="#">Link For Games</a>
   <a href="#">Link For Find a GM</a>
   <a href="#" class="right">Sign In</a>
@@ -25,5 +26,8 @@
 
   <body>
     <%= yield %>
+     <div class="footer">
+      <p>To infinity and beyond!</p>
+    </div>
   </body>
 </html>

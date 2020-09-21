@@ -1,8 +1,15 @@
-<u><h1>Your Starfinder Character</h1></u>
+<h1>CHARACTER SHEET</h1>
 
-<h2><%=@character.name%></h2>
-<p><%=@character.race%></p>
-<p><%=@character.theme%></p>
-<p><%=@character.character_class%></p>
-<p><%=@character.class_level%></p>
-<p><%=@character.description%></p>
+
+
+<div class="character_show">
+<h2>CHARACTER NAME: <u><%=@character.name%></u>
+<b>
+<p>RACE: <u><%=@character.race%></u></p>
+<p>THEME: <u><%=@character.theme%></u></p>
+<p>CLASS: <u><%=@character.character_class%></u></p>
+<p>LEVEL: <u><%=@character.class_level%></u></p>
+<p>DESCRIPTION: <u><%=@character.description%></u></p>
+</h2>
+</b>
+</div>
