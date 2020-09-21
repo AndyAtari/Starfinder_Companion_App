@@ -5,11 +5,10 @@
 
 * {
   box-sizing: border-box;
-  
 }
 
 body {
-  margin: 0;
+  padding: 10px;
   background-color: #1D2951;
   text-align: center;
   color: #d7dbdd;
@@ -25,12 +24,11 @@ a {
 /* Style the header */
 .header {
   background-color: #1D2951;
-  padding: 0px;
+  padding: 30px;
   text-align: center;
   font-family: OCR A Std, monospace;
   color: #e25822;
-  padding-top: 10px;
-  height: 150px;
+  
 }
 
 img {
@@ -49,7 +47,7 @@ img {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 20px 20px;
+  padding: 14px 16px;
   text-decoration: none;
   font-size: large;
   font-family: OCR A Std, monospace;
@@ -68,21 +66,28 @@ img {
 
 Div.container {
   text-align: center;
-  padding: 345px;
+  padding: 300px;
+  margin-top: 20px;
   color: white;
   background-image: url('/starfinder_ship.jpg');
 }
 
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #333333;
-  color: whitesmoke;
+  padding: 20px;
   text-align: center;
-
+  background: #414a4c;
+  margin-top: 20px;
 }
+
+.footer a.left {
+  float: left;
+}
+
+.footer a.right {
+  float: right;
+}
+
+
 
 
   
