@@ -9,7 +9,7 @@
 <th>Details</th>
 </tr>
 
-<%@characters.each do |character|%>
+<%@characters.order(:name).each do |character|%>
 <tr>
     <td><%= character.name %></td>
     <td><%= character.description%></td>
