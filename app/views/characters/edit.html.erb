@@ -1,4 +1,4 @@
-<h1>CREATE A CHARACTER</h1>
+<h1>EDIT CHARACTER</h1>
 
 <%= form_for(@character) do |f| %>
 
@@ -46,8 +46,8 @@
     <%= f.text_area :description, placeholder: 'Tell us about your character'%>
   </div>
 
-  
-    
-    <%= f.submit %>
-    
+    <%= f.submit %> 
+
 <%end%>
+
+ <%= button_to("Delete Character", @character, {:onclick => "return confirm('Are you sure?')", :method => :delete, :remote => true}) %>
