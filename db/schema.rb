@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_19_214717) do
+ActiveRecord::Schema.define(version: 2020_09_22_162013) do
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string "title"
+    t.string "adventure_path"
+    t.string "game_master"
+    t.boolean "looking_for_players"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -21,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_09_19_214717) do
     t.string "theme"
     t.string "character_class"
     t.integer "class_level"
+    t.integer "campaign_id"
   end
 
 end
