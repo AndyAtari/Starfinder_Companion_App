@@ -1,1 +1,28 @@
 <h1>CREATE A CAMPAIGN</h1>
+
+<%=form_for(@campaign) do |f| %>
+
+<div class="form">
+    <%= f.label :title%><br>
+    <%= f.text_field :title%>
+</div>
+
+<div class="form">
+    <%= f.label :adventure_path%><br>
+    <%= f.text_field :adventure_path%>
+</div>
+
+<div class="form">
+    <%= f.label :game_master%><br>
+    <%= f.text_field :game_master%>
+</div>
+
+<div class="form">
+    <%= f.label :looking_for_players%>?
+    <%= f.check_box :looking_for_players%>
+</div>
+
+
+<%=f.submit%>
+
+<%end%>

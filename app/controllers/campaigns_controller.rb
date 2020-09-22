@@ -20,7 +20,7 @@ class CampaignsController < ApplicationController
     def create 
         @campaign = Campaign.new(campaign_params)
         if @campaign.save 
-            redirect_to campaign_path(@campaign)
+            redirect_to campaigns_path
         else  
             render "new"
         end
@@ -43,6 +43,6 @@ class CampaignsController < ApplicationController
     end
 
     def campaign_params
-        params.require(:campagin).permit(:title, :adventure_path, :game_master, :looking_for_players, :character_id)
+        params.require(:campaign).permit(:title, :adventure_path, :game_master, :looking_for_players)
     end
 end
