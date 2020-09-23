@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_22_162013) do
+ActiveRecord::Schema.define(version: 2020_09_23_203318) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "title"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 2020_09_22_162013) do
     t.string "character_class"
     t.integer "class_level"
     t.integer "campaign_id"
+  end
+
+  create_table "starships", force: :cascade do |t|
+    t.string "name"
+    t.string "tier"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
