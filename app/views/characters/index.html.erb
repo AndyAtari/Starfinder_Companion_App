@@ -6,19 +6,19 @@
 <th>Name</th>
 <th>Description</th>
 <th>Campaign</th>
-<th>Details</th>
+<th>Status</th>
 </tr>
 
 <%@characters.order(:name).each do |character|%>
 <tr>
-    <td><%= character.name %></td>
+    <td><%= link_to character.name, character_path(character) %></td>
     <td><%= character.description%></td>
     <%if !character.campaign.blank?%>
-    <td><%= link_to character.campaign.title, campaigns_path%></td>
+    <td><%= link_to character.campaign.title, campaign_path(character.campaign)%></td>
     <%else%>
     <td>N/A</td>
     <%end%>
-    <td><%= link_to "View #{character.name}", character_path(character)%></td>
+    <td><%= link_to "Update/Delete #{character.name}", edit_character_path(character)%></td>
 </tr>
 <%end%>
 </table>
