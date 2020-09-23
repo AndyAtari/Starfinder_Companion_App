@@ -28,7 +28,7 @@ class CampaignsController < ApplicationController
 
     def update
         @campaign.update(campaign_params)
-        redirect_to campaign_path(@campaign)
+        redirect_to campaigns_path
     end
 
     def destroy
@@ -43,6 +43,6 @@ class CampaignsController < ApplicationController
     end
 
     def campaign_params
-        params.require(:campaign).permit(:title, :adventure_path, :game_master, :looking_for_players, :character_ids)
+        params.require(:campaign).permit(:title, :adventure_path, :game_master, :looking_for_players)
     end
 end

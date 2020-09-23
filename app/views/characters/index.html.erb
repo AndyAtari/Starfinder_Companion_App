@@ -13,7 +13,7 @@
 <tr>
     <td><%= character.name %></td>
     <td><%= character.description%></td>
-    <td><%= link_to character.campaign.title%></td>
+    <td><%= link_to character.campaign.title, campaigns_path%></td>
     <td><%= link_to "View #{character.name}", character_path(character)%></td>
 </tr>
 <%end%>
