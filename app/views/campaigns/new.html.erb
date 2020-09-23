@@ -1,0 +1,33 @@
+<h1>START A CAMPAIGN</h1>
+
+<%=form_for(@campaign) do |f| %>
+
+<div class="form">
+    <%= f.label :title%><br>
+    <%= f.text_field :title%>
+</div>
+
+<div class="form">
+    <%= f.label :adventure_path%><br>
+    <%= f.text_field :adventure_path%>
+</div>
+
+<div class="form">
+    <%= f.label :game_master%><br>
+    <%= f.text_field :game_master%>
+</div>
+
+<div class="form">
+    <%= f.label :looking_for_players%>?
+    <%= f.check_box :looking_for_players%>
+</div>
+
+<h3> Move a Character to this Campaign? </h3>
+    
+<div class="form">
+    <%= f.collection_check_boxes :character_ids, Character.all, :id, :name, {}, {multiple: true}%>
+</div>
+
+<%=f.submit%>
+
+<%end%>
