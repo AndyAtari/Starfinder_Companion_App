@@ -16,7 +16,11 @@
         <td><%= campaign.adventure_path%></td>
         <td><%= campaign.game_master%></td>
         <td><%= campaign.need_players?%></td>
-        <td><%= link_to "Character Name"%></td>
+        <td>
+        <% campaign.characters.each do |character|%>
+            <%= link_to character.name, character_path(character)%>
+        <%end%>
+        </td>
         <td><%= link_to "Update/Delete"%></td>
     </tr>
 <%end%>
