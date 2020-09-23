@@ -46,6 +46,41 @@
     <%= f.text_area :description, placeholder: 'Tell us about your character'%>
   </div>
 
+  <div class="form">
+  <label>Select Your Character's Adventure</label>
+   <p><%=f.collection_select :campaign_id, Campaign.all, :id, :title, include_blank: true%></p>
+  </div>
+
+  <h3>Or Create an Adventure</h3>
+
+  <div class="form">
+    <%=f.fields_for :campaign, Campaign.new do |campaign_fields|%>
+    
+    
+    <div class="form">
+    <%= campaign_fields.label :title%><br>
+    <%= campaign_fields.text_field :title%>
+    </div>
+
+<div class="form">
+    <%= campaign_fields.label :adventure_path%><br>
+    <%= campaign_fields.text_field :adventure_path%>
+</div>
+
+<div class="form">
+    <%= campaign_fields.label :game_master%><br>
+    <%= campaign_fields.text_field :game_master%>
+</div>
+
+<div class="form">
+    <%= campaign_fields.label :looking_for_players%>?
+    <%= campaign_fields.check_box :looking_for_players%>
+</div>
+
+    <%end%>
+
+  </div>
+
     <%= f.submit %> 
 
 <%end%>

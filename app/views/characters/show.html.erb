@@ -10,7 +10,12 @@
 <p>CLASS: <u><%=@character.character_class%></u></p>
 <p>LEVEL: <u><%=@character.class_level%></u></p>
 <p>DESCRIPTION: <u><%=@character.description%></u></p>
-<p>CAMPAIGN: <u><%=@character.campaign.title%></u></p>
+<p>CAMPAIGN: 
+<%if !@character.campaign.blank?%>
+<u><%=@character.campaign.title%></u></p>
+<%else%>
+<u>N/A</u>
+<%end%>
 </h2>
 </b>
 </div>

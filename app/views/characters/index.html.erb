@@ -13,7 +13,11 @@
 <tr>
     <td><%= character.name %></td>
     <td><%= character.description%></td>
+    <%if !character.campaign.blank?%>
     <td><%= link_to character.campaign.title, campaigns_path%></td>
+    <%else%>
+    <td>N/A</td>
+    <%end%>
     <td><%= link_to "View #{character.name}", character_path(character)%></td>
 </tr>
 <%end%>

@@ -18,7 +18,7 @@
         <td><%= campaign.need_players?%></td>
         <td>
         <% campaign.characters.each do |character|%>
-            <%= link_to character.name, character_path(character)%>
+            <p><%= link_to character.name, character_path(character)%></p>
         <%end%>
         </td>
         <td><%= link_to "Update/Delete", edit_campaign_path(campaign)%></td>
