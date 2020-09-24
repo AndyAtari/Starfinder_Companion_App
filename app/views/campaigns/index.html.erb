@@ -7,6 +7,7 @@
 <th>Game Master</th>
 <th>Looking For Players</th>
 <th>Characters</th>
+<th>Starships</th>
 <th>Status</th>
 </tr>
 
@@ -20,6 +21,9 @@
         <% campaign.characters.each do |character|%>
             <p><%= link_to character.name, character_path(character)%></p>
         <%end%>
+        </td>
+        <td>
+        <%= link_to "View Ships", campaign_starships_path(campaign)%>
         </td>
         <td><%= link_to "Update/Delete", edit_campaign_path(campaign)%></td>
     </tr>
