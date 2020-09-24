@@ -1,8 +1,19 @@
 <h1>STARSHIPS</h1>
 
+<table class="table">
+<tr>
+<th>Name</th>
+<th>Tier</th>
+</tr>
+
+
 <%@starships.each do |starship|%>
-    <p><%=starship.name%></p>
+<tr>
+    <td><%=starship.name%></td>
+    <td><%= starship.tier%></td>
+</tr>
 <%end%>
+</table>
 
 
 
