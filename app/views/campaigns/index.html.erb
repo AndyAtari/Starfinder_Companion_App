@@ -5,10 +5,11 @@
 <th>Campaign Title</th>
 <th>Adventure Path</th>
 <th>Game Master</th>
-<th>Looking For Players</th>
 <th>Characters</th>
 <th>Starships</th>
-<th>Status</th>
+<th><i class="material-icons" style="font-size:25px;color:red">mode_edit</i>Edit</th>
+<th>Looking For Players</th>
+<th>Ask To Join?</th>
 </tr>
 
 <% @campaign.each do |campaign|%>
@@ -16,7 +17,6 @@
         <td><%= link_to campaign.title, campaign_path(campaign)%></td>
         <td><%= campaign.adventure_path%></td>
         <td><%= campaign.game_master%></td>
-        <td><%= campaign.need_players?%></td>
         <td>
         <% campaign.characters.each do |character|%>
             <p><%= link_to character.name, character_path(character)%></p>
@@ -28,6 +28,13 @@
         <p><%= link_to "Add a Ship", campaign_path(campaign)%>
         </td>
         <td><%= link_to "Update/Delete", edit_campaign_path(campaign)%></td>
+        <td><%= campaign.need_players?%></td>
+        <td>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        </td>
     </tr>
 <%end%>
 
