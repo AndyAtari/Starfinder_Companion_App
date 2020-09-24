@@ -5,9 +5,29 @@
     <p>Adventure Path: <u><%= @campaign.adventure_path%></u></p>
     <p>Game Master: <u><%= @campaign.game_master%></u></p>
     <p>Looking for Players? <u><%= @campaign.need_players?%></u></p>
+    <p>Starships: 
+        <% @campaign.starships.each do |starship| %>
+            <u><p><%= starship.name%>
+        <%end%>
+    </u></p>
     </h2>
 </div>
 
-<div class="form">
+<h3>Add a Starship?</h3>
+
+
+<%= form_for([@campaign, @starship]) do |f|%>
     
-</div>
+    <div class="form">
+        <%= f.label :name%><br>
+        <%= f.text_field :name%>
+    </div>
+
+    <div class="form">
+        <%= f.label :tier%><br>
+        <%= f.text_field :tier%>
+    </div>
+
+    <%= f.submit %>
+
+<%end%>

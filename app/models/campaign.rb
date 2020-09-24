@@ -1,5 +1,6 @@
 class Campaign < ApplicationRecord
     has_many :characters
+    has_many :starships
     validates :title, presence: true 
 
     def need_players?

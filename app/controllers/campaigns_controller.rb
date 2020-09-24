@@ -6,7 +6,7 @@ class CampaignsController < ApplicationController
     end
 
     def show
-
+        @starship = @campaign.starships.build
     end
 
     def new
@@ -43,6 +43,11 @@ class CampaignsController < ApplicationController
     end
 
     def campaign_params
-        params.require(:campaign).permit(:title, :adventure_path, :game_master, :looking_for_players, character_ids: [])
+        params.require(:campaign).permit(:title, 
+            :adventure_path, 
+            :game_master, 
+            :looking_for_players, 
+            character_ids: []
+        )
     end
 end

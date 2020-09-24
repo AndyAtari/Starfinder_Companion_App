@@ -2,11 +2,15 @@ class StarshipsController < ApplicationController
     before_action :set_starship, only: [:show, :edit, :update, :destroy] 
     
     def index
-        @starships = Starship.all
+         if params[:campaign_id]
+            @starships = Campaign.find(params[:campaign_id]).starships 
+         else  
+            @starships = Starship.all 
+         end 
     end
 
     def show
-
+        
     end
 
     def new
@@ -18,9 +22,10 @@ class StarshipsController < ApplicationController
     end
 
     def create 
-        @starship = Starship.new(character_params)
+        @campaign = Campaign.find(params[:campaign_id])
+        @starship = @campaign.starships.build(starship_params)
         if @starship.save 
-            redirect_to starship_path(@starship)
+            redirect_to campaign_path(@campaign)
         else  
             render "new"
         end

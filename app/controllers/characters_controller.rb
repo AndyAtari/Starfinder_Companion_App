@@ -43,7 +43,15 @@ class CharactersController < ApplicationController
     end
 
     def character_params
-        params.require(:character).permit(:name, :race, :theme, :character_class, :class_level, :description, :campaign_id, campaign_attributes:[:title, :adventure_path, :game_master, :looking_for_players])
+        params.require(:character).permit(:name, 
+            :race, 
+            :theme, 
+            :character_class, 
+            :class_level, 
+            :description, 
+            :campaign_id, 
+            campaign_attributes:[:title, :adventure_path, :game_master, :looking_for_players]
+        )
     end
 
 
