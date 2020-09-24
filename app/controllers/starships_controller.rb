@@ -27,7 +27,7 @@ class StarshipsController < ApplicationController
         if @starship.save 
             redirect_to campaign_path(@campaign)
         else  
-            render "new"
+            render "campaigns/show"
         end
     end
 

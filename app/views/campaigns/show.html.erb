@@ -15,9 +15,22 @@
 
 <h3>Add a Starship?</h3>
 
+<% if @starship.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@starship.errors.count, "error") %> prohibited this starship from being saved:
+      </h2>
+
+      <ol>
+      <% @starship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ol>
+    </div>
+  <% end %>
 
 <%= form_for([@campaign, @starship]) do |f|%>
-    
+
     <div class="form">
         <%= f.label :name%><br>
         <%= f.text_field :name%>
