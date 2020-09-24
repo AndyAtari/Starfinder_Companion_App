@@ -23,7 +23,9 @@
         <%end%>
         </td>
         <td>
-        <%= link_to "View Ships", campaign_starships_path(campaign)%>
+        <p><%= campaign.starships.count%></p>
+        <p><%= link_to "View Ships", campaign_starships_path(campaign)%></p>
+        <p><%= link_to "Add a Ship", campaign_path(campaign)%>
         </td>
         <td><%= link_to "Update/Delete", edit_campaign_path(campaign)%></td>
     </tr>

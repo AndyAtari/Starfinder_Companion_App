@@ -4,6 +4,7 @@
 <tr>
 <th>Name</th>
 <th>Tier</th>
+<th>Status</th>
 </tr>
 
 
@@ -11,6 +12,7 @@
 <tr>
     <td><%=starship.name%></td>
     <td><%= starship.tier%></td>
+    <td><%= link_to "Update/Delete", edit_starship_path(starship)%></td>
 </tr>
 <%end%>
 </table>

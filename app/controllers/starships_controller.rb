@@ -33,7 +33,7 @@ class StarshipsController < ApplicationController
 
     def update
         @starship.update(starship_params)
-        redirect_to starship_path(@starship)
+        redirect_to starships_path
     end
 
     def destroy

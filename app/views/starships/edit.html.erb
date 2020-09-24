@@ -1,0 +1,17 @@
+<%= form_for(@starship) do |f|%>
+    
+    <div class="form">
+        <%= f.label :name%><br>
+        <%= f.text_field :name%>
+    </div>
+
+    <div class="form">
+        <%= f.label :tier%><br>
+        <%= f.text_field :tier%>
+    </div>
+
+    <%= f.submit %>
+
+<%end%>
+
+<%= button_to("Delete Starship", @starship, {:onclick => "return confirm('Are you sure?')", :method => :delete, :remote => true}) %>
