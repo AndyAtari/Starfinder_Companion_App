@@ -10,9 +10,10 @@
 <th><i class="material-icons" style="font-size:25px;color:red">mode_edit</i>Edit</th>
 <th>Looking For Players</th>
 <th>Ask To Join?</th>
+<th>Joined?</th>
 </tr>
 
-<% @campaign.each do |campaign|%>
+<% @campaigns.each do |campaign|%>
     <tr>
         <td><%= link_to campaign.title, campaign_path(campaign)%></td>
         <td><%= campaign.adventure_path%></td>
@@ -30,11 +31,18 @@
         <td><%= link_to "Update/Delete", edit_campaign_path(campaign)%></td>
         <td><%= campaign.need_players?%></td>
         <td>
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-        </label>
+        <% if campaign.join_game?%>
+        <%= form_for campaign do |f|%>
+          <p><%= f.check_box :status%></p>
+            <% if campaign.status == false%>
+            <%= f.submit "JOIN"%>
+            <% else %>
+            <%= f.submit "LEAVE"%>
+            <%end%>
+            <%end%>
+        <%end%>
         </td>
+        <td><%= campaign.joined_game?%></td>
     </tr>
 <%end%>
 

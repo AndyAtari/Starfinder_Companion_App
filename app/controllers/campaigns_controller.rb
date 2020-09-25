@@ -2,7 +2,7 @@ class CampaignsController < ApplicationController
     before_action :set_campaign, only: [:show, :edit, :update, :destroy] 
     
     def index
-        @campaign = Campaign.all
+        @campaigns = Campaign.all
     end
 
     def show
@@ -47,6 +47,7 @@ class CampaignsController < ApplicationController
             :adventure_path, 
             :game_master, 
             :looking_for_players, 
+            :status,
             character_ids: []
         )
     end

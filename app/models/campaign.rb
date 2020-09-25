@@ -10,4 +10,16 @@ class Campaign < ApplicationRecord
             "No"
         end
     end
+
+    def join_game?
+        self.looking_for_players == true
+    end
+
+    def joined_game?
+       if self.status == true
+        "Pending"
+       end
+    end
+
+    
 end
