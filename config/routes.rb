@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   
+  resources :users
+  
   resources :campaigns do 
     resources :starships
   end

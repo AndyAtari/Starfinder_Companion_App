@@ -7,3 +7,4 @@ class Character < ApplicationRecord
         attributes['title'].blank?
     end
 end
+
