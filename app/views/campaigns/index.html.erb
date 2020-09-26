@@ -34,7 +34,7 @@
         <% if campaign.join_game?%>
         <%= form_for campaign do |f|%>
           <p><%= f.check_box :status%></p>
-            <% if campaign.status == false%>
+            <% if campaign.not_joined_game?%>
             <%= f.submit "JOIN"%>
             <% else %>
             <%= f.submit "LEAVE"%>
