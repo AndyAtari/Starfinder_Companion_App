@@ -1,0 +1,18 @@
+<h1>Signup!</h1>
+
+<%= form_for @user do |f| %>
+
+<div class="form">
+    <%= f.label :user_name%><br>
+    <%= f.text_field :user_name, placeholder: 'Name'%>
+</div>
+
+<div class="form">
+    <%= f.label :email%><br>
+    <%= f.text_field :email, placeholder: 'Email'%>
+</div>
+
+    <%= f.submit%>
+
+<%end%>
+
