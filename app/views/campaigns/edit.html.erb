@@ -36,11 +36,6 @@
     <%= f.check_box :looking_for_players%>
 </div>
 
-<h3> Move a Character to this Campaign? </h3>
-    
-<div class="form">
-    <%= f.collection_check_boxes :character_ids, Character.all, :id, :name, {}, {multiple: true}%>
-</div>
 
 <%=f.submit%>
 

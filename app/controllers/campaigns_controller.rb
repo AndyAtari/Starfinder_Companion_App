@@ -1,9 +1,9 @@
 class CampaignsController < ApplicationController
     before_action :set_campaign, only: [:show, :edit, :update, :destroy] 
-    skip_before_action :verified_user, only: [:index]
+    
     
     def index
-        @campaigns = Campaign.all
+        @campaigns = current_user.campaigns
     end
 
     def show
@@ -40,7 +40,7 @@ class CampaignsController < ApplicationController
     private
 
     def set_campaign
-        @campaign = Campaign.find(params[:id])
+        @campaign = current_user.campaigns.find(params[:id])
     end
 
     def campaign_params
