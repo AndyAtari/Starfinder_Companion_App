@@ -2,6 +2,7 @@ class User < ApplicationRecord
     has_secure_password
     has_many :characters
     has_many :campaigns, through: :characters
+    has_many :starships, through: :campaigns 
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
 

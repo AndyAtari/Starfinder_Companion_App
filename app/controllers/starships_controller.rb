@@ -5,7 +5,7 @@ class StarshipsController < ApplicationController
          if params[:campaign_id]
             @starships = Campaign.find(params[:campaign_id]).starships 
          else  
-            @starships = Starship.all 
+            @starships = current_user.starships  
          end 
     end
 
@@ -44,7 +44,7 @@ class StarshipsController < ApplicationController
     private
 
     def set_starship
-        @starship = Starship.find(params[:id])
+        @starship = current_user.starships.find(params[:id])
     end
 
     def starship_params

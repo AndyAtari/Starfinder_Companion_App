@@ -3,7 +3,7 @@ class CharactersController < ApplicationController
     
     
     def index
-        @characters = Character.all
+        @characters = current_user.characters
     end
 
     def show
@@ -19,7 +19,7 @@ class CharactersController < ApplicationController
     end
 
     def create 
-        @character = Character.new(character_params)
+        @character = current_user.characters.build(character_params)
         if @character.save 
             redirect_to character_path(@character)
         else  
@@ -40,7 +40,7 @@ class CharactersController < ApplicationController
     private
 
     def set_character
-        @character = Character.find(params[:id])
+        @character = current_user.characters.find(params[:id])
     end
 
     def character_params
