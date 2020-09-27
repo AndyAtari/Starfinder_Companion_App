@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
     before_action :set_character, only: [:show, :edit, :update, :destroy] 
-    before_action :verified_user
+    
     
     def index
         @characters = Character.all

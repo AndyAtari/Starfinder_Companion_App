@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  get '/signin' => "sessions#new"
-  post '/signin' => "sessions#create"
-  delete '/signin' => "session#destroy"
+  root 'site#index'
+
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
+  post '/signout' => 'sessions#destroy'
   
   
   resources :users
@@ -13,6 +15,6 @@ Rails.application.routes.draw do
   
   resources :characters
   resources :starships 
-  root 'site#index'
+ 
 
 end
