@@ -5,3 +5,13 @@
 .signup_link {
     font-size: larger;
 }
+
+input[type=password], select {
+    width: 25%;
+    padding: 10px 20px;
+    margin: 0px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
