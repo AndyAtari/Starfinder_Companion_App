@@ -1,0 +1,19 @@
+<h1>Sign In</h1>
+
+
+<%= form_tag(signin_path) do %>
+
+<div class="form">
+    <%= label_tag :email%><br>
+    <%= text_field_tag :email, nil, :placeholder => 'Email'%>
+</div>
+
+    <%= submit_tag("Sign In")%>
+
+<%end%>
+
+<h3>or</h3>
+
+<div class="signup_link">
+<%= link_to "Create Account", new_user_path%>
+</div>
