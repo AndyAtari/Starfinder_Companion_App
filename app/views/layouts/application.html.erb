@@ -18,12 +18,19 @@
   </div>
 
   <div class="topnav">
+  <% if current_user%>
+  <%= link_to current_user.user_name%>
+  <%end%>
   <%= link_to "Characters", characters_path%>
   <%= link_to "Campaigns", campaigns_path%>
   <%= link_to "Starships", starships_path%>
   <%= link_to "Create a Character", new_character_path%>
   <%= link_to "Create a Campaign", new_campaign_path%>
+  <% if current_user%>
+    <%= link_to "Sign Out", signout_path, method: "delete", class: "right" %>
+  <%else%>
   <%= link_to "Sign In", signin_path, class: "right"%>
+  <%end%>
   </div>
 
   <body>
