@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_28_041802) do
+ActiveRecord::Schema.define(version: 2020_09_28_172435) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "title"
     t.string "adventure_path"
-    t.string "game_master"
     t.boolean "looking_for_players"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "status", default: false
   end
 
   create_table "characters", force: :cascade do |t|
