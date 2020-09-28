@@ -3,7 +3,6 @@
 <div class="campaign_show">
     <h2>
     <p>Adventure Path: <u><%= @campaign.adventure_path%></u></p>
-    <p>Game Master: <u><%= @campaign.game_master%></u></p>
     <p>Looking for Players? <u><%= @campaign.need_players?%></u></p>
     <p>Starships: 
         <% @campaign.starships.each do |starship| %>
