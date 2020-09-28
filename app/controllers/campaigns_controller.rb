@@ -3,7 +3,7 @@ class CampaignsController < ApplicationController
     
     
     def index
-        @campaigns = current_user.campaigns
+        @campaigns = Campaign.all 
     end
 
     def show
@@ -45,8 +45,7 @@ class CampaignsController < ApplicationController
 
     def campaign_params
         params.require(:campaign).permit(:title, 
-            :adventure_path, 
-            :game_master, 
+            :adventure_path,  
             :looking_for_players, 
             :status,
             character_ids: []

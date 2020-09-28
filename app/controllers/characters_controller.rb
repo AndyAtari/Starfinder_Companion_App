@@ -51,7 +51,7 @@ class CharactersController < ApplicationController
             :class_level, 
             :description, 
             :campaign_id, 
-            campaign_attributes:[:title, :adventure_path, :game_master, :looking_for_players]
+            campaign_attributes:[:title, :adventure_path, :looking_for_players]
         )
     end
 

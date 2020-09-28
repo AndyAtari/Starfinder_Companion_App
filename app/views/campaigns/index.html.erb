@@ -4,20 +4,16 @@
 <tr>
 <th>Campaign Title</th>
 <th>Adventure Path</th>
-<th>Game Master</th>
 <th>Characters</th>
 <th>Starships</th>
 <th><i class="material-icons" style="font-size:25px;color:red">mode_edit</i>Edit</th>
 <th>Looking For Players</th>
-<th>Ask To Join?</th>
-<th>Joined?</th>
 </tr>
 
 <% @campaigns.each do |campaign|%>
     <tr>
         <td><%= link_to campaign.title, campaign_path(campaign)%></td>
         <td><%= campaign.adventure_path%></td>
-        <td><%= campaign.game_master%></td>
         <td>
         <% campaign.characters.each do |character|%>
             <p><%= link_to character.name, character_path(character)%></p>
@@ -30,19 +26,6 @@
         </td>
         <td><%= link_to "Update/Delete", edit_campaign_path(campaign)%></td>
         <td><%= campaign.need_players?%></td>
-        <td>
-        <% if campaign.join_game?%>
-        <%= form_for campaign do |f|%>
-          <p><%= f.check_box :status%></p>
-            <% if campaign.not_joined_game?%>
-            <%= f.submit "JOIN"%>
-            <% else %>
-            <%= f.submit "LEAVE"%>
-            <%end%>
-            <%end%>
-        <%end%>
-        </td>
-        <td><%= campaign.joined_game?%></td>
     </tr>
 <%end%>
 
