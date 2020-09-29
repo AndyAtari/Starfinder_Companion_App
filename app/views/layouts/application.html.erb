@@ -13,14 +13,15 @@
   <div class="header">
   <%= link_to image_tag("/IMG_dice.jpg"), root_url%>
   <h1>
+  <% if current_user%>
+  <%= link_to "#{current_user.user_name.possessive} STARFINDER COMPANION"%>
+  <%else%>
   <%= link_to "STARFINDER COMPANION", root_url%>
+  <%end%>
   </h1>
   </div>
 
   <div class="topnav">
-  <% if current_user%>
-  <%= link_to current_user.user_name%>
-  <%end%>
   <%= link_to "Characters", characters_path%>
   <%= link_to "Campaigns", campaigns_path%>
   <%= link_to "Starships", starships_path%>

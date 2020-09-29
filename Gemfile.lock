@@ -133,6 +133,7 @@ GEM
     omniauth-oauth2 (1.7.0)
       oauth2 (~> 1.4)
       omniauth (~> 1.9)
+    possessive (1.0.1)
     public_suffix (4.0.6)
     puma (4.3.6)
       nio4r (~> 2.0)
@@ -238,6 +239,7 @@ DEPENDENCIES
   mini_racer
   omniauth
   omniauth-github
+  possessive
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   sass-rails (>= 6)
