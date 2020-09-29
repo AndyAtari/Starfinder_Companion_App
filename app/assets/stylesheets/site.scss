@@ -3,17 +3,18 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-* {
-  box-sizing: border-box;
-}
+
 
 body {
-  padding: 10px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #1D2951;
   text-align: center;
   color: #d7dbdd;
   font-family: OCR A Std, monospace;
-  
 }
 
 a {
@@ -28,7 +29,7 @@ a:hover {
 /* Style the header */
 .header {
   background-color: #1D2951;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   font-family: OCR A Std, monospace;
   color: #e25822;
@@ -70,18 +71,19 @@ img {
 
 Div.container {
   text-align: center;
-  padding: 300px;
-  margin-top: 20px;
+  padding: 310px;
+  margin-top: 0px;
   color: white;
   background-image: url('/starfinder_ship.jpg');
 }
 
 .footer {
-  padding: 20px;
   text-align: center;
   background: #414a4c;
-  margin-top: 20px;
+  margin-top: auto;
+  padding: 1em;
 }
+
 
 .footer a.left {
   float: left;
