@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    skip_before_action :verified_user, only: [:new, :create]
+    skip_before_action :verified_user, only: [:new, :create, :omniauth]
     
     def new
         @user = User.new
@@ -13,6 +13,16 @@ class SessionsController < ApplicationController
         else  
           render 'new'
         end
+    end
+
+    def omniauth
+      user = User.from_omniauth(auth)
+      if user.valid?
+        session[:user_id] = user.id
+        redirect_to '/'
+      else  
+        redirect_to signin_path
+      end
     end
 
     def destroy
