@@ -19,7 +19,7 @@ class CampaignsController < ApplicationController
     end
 
     def create 
-        @campaign = Campaign.new(campaign_params)
+        @campaign = current_user.owned_campaigns.build(campaign_params)
         if @campaign.save 
             redirect_to campaigns_path
         else  
@@ -48,6 +48,7 @@ class CampaignsController < ApplicationController
             :adventure_path,  
             :looking_for_players, 
             :status,
+            :user_id,
             character_ids: []
         )
     end

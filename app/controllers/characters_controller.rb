@@ -18,7 +18,7 @@ class CharactersController < ApplicationController
 
     end
 
-    def create 
+    def create  
         @character = current_user.characters.build(character_params)
         if @character.save 
             redirect_to character_path(@character)
@@ -51,7 +51,7 @@ class CharactersController < ApplicationController
             :class_level, 
             :description, 
             :campaign_id, 
-            campaign_attributes:[:title, :adventure_path, :looking_for_players]
+            campaign_attributes:[:title, :adventure_path, :looking_for_players, :user_id]
         )
     end
 
