@@ -29,6 +29,7 @@ gem 'omniauth-github'
 gem 'dotenv-rails'
 gem 'thin'
 gem 'possessive'
+gem 'normalize-rails'
 
 
 

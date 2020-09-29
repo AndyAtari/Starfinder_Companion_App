@@ -118,6 +118,7 @@ GEM
     nio4r (2.5.3)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    normalize-rails (8.0.1)
     oauth2 (1.4.4)
       faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
@@ -237,6 +238,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mini_racer
+  normalize-rails
   omniauth
   omniauth-github
   possessive
