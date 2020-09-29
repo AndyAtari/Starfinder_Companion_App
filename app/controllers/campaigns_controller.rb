@@ -15,7 +15,7 @@ class CampaignsController < ApplicationController
     end
 
     def edit
-
+        redirect_to root_path unless current_user.id == @campaign.user_id 
     end
 
     def create 
@@ -28,13 +28,21 @@ class CampaignsController < ApplicationController
     end
 
     def update
-        @campaign.update(campaign_params)
-        redirect_to campaigns_path
+        if current_user.id == @campaign.user_id
+            @campaign.update(campaign_params)
+            redirect_to campaigns_path
+        else  
+            redirect_to root_path
+        end
     end
 
     def destroy
-        @campaign.destroy
-        redirect_to campaigns_url 
+        if current_user.id == @campaign.user_id
+            @campaign.destroy
+            redirect_to campaigns_url 
+        else  
+            redirect_to root_path
+        end
     end
 
     private
