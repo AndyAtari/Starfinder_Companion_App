@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
           session[:user_id] = @user.id
           redirect_to '/'
         else  
+          flash.now[:alert] = 'Invalid email/password combination'
           render 'new'
         end
     end
@@ -27,6 +28,7 @@ class SessionsController < ApplicationController
 
     def destroy
       session.delete(:user_id)
+      flash[:notice] = 'You have successfully signed out. Live long and prosper.'
       redirect_to signin_path
     end
   

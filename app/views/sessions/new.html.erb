@@ -1,5 +1,10 @@
 <h1>Sign In</h1>
 
+<% flash.each do |type, msg| %>
+  <div class="alert">
+    <%= msg %>
+  </div>
+<% end %><br>
 
 <%= form_tag('/signin', method: :post) do %>
 
@@ -21,10 +26,9 @@
 
 <div class="signup_link">
 <%= link_to('Sign In with Github!', '/auth/github') %>
-</div>
-
-<h3>or</h3>
+</div><br>
 
 <div class="signup_link">
+New User?
 <%= link_to "Create Account!", new_user_path%>
 </div>
