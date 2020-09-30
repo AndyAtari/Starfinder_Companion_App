@@ -22,11 +22,13 @@
   </div>
 
   <div class="topnav">
+  <% if current_user%>
   <%= link_to "Characters", characters_path%>
   <%= link_to "Campaigns", campaigns_path%>
   <%= link_to "Starships", starships_path%>
   <%= link_to "Create a Character", new_character_path%>
   <%= link_to "Create a Campaign", new_campaign_path%>
+  <%end%>
   <% if current_user%>
     <%= link_to "Sign Out", signout_path, method: "delete", class: "right" %>
   <%else%>

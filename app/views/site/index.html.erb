@@ -1,7 +1,15 @@
 
+
 <div class="container">
-<h2>Search Bar Here</h2>
+<% if current_user%>
+    <h2>Search Bar Here</h2>
+<%else%>
+    <h2><%= link_to "Create a Starfinder Companion account", new_user_path%></h2>
+    or
+    <h2><%= link_to('Sign Up with Github!', '/auth/github') %></h2>
+<%end%>
 </div>
+
 
    
 
