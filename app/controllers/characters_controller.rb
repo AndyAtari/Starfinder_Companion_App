@@ -7,7 +7,6 @@ class CharactersController < ApplicationController
     end
 
     def show
-
     end
 
     def new
@@ -15,7 +14,6 @@ class CharactersController < ApplicationController
     end
 
     def edit
-
     end
 
     def create  
@@ -40,7 +38,8 @@ class CharactersController < ApplicationController
     private
 
     def set_character
-        @character = current_user.characters.find(params[:id])
+        @character = Character.find(params[:id])
+        redirect_to root_path unless current_user.id == @character.user_id 
     end
 
     def character_params

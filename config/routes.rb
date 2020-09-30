@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   get '/auth/github/callback' => 'sessions#omniauth'
   
   
-  resources :users
+  resources :users, only: [:new, :create]
   
   resources :campaigns do 
-    resources :starships
+    resources :starships, only: [:new, :create, :index]
   end
   
   resources :characters
