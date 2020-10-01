@@ -30,16 +30,6 @@
 
 <%= form_for([@campaign, @starship]) do |f|%>
 
-    <div class="form">
-        <%= f.label :name%><br>
-        <%= f.text_field :name%>
-    </div>
-
-    <div class="form">
-        <%= f.label :tier%><br>
-        <%= f.text_field :tier%>
-    </div>
-
-    <%= f.submit %>
+   <%= render partial: 'starships/form', locals: {f: f}%>
 
 <%end%>

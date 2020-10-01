@@ -1,16 +1,6 @@
 <%= form_for(@starship) do |f|%>
     
-    <div class="form">
-        <%= f.label :name%><br>
-        <%= f.text_field :name%>
-    </div>
-
-    <div class="form">
-        <%= f.label :tier%><br>
-        <%= f.text_field :tier%>
-    </div>
-
-    <%= f.submit %>
+  <%= render partial: 'form', locals: {f: f}%>
 
 <%end%>
 
