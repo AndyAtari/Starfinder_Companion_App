@@ -1,0 +1,82 @@
+<%= form_for(@character) do |f| %>
+
+ <% if @character.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved:
+      </h2>
+
+      <ol>
+      <% @character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ol>
+    </div>
+  <% end %>
+
+  <div class="form">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, placeholder: 'Name'%>
+  </div>
+
+  <div class="form">
+    <%= f.label :race%><br>
+    <%= f.select :race, (['Android','Human','Kasatha','Lashunta','Shirren','Vesk','Ysoki']), :include_blank => true%>
+  </div>
+
+  <div class="form">
+    <%= f.label :theme%><br>
+    <%= f.select :theme, (['Ace Pilot', 'Bounty Hunter', 'Icon', 'Mercenary', 'Outlaw', 'Priest', 'Scholar', 'Spacefarer', 'Xenoseeker', 'Themeless']), :include_blank => true%>
+  </div>
+
+  <div class="form">
+    <%= f.label :character_class%><br>
+    <%= f.select :character_class, (['Envoy', 'Mechanic', 'Mystic', 'Operative', 'Solarian', 'Soldier', 'Technomancer']), :include_blank => true%>
+  </div>
+
+  <div class="form">
+    <%= f.label :class_level%><br>
+    <%= f.number_field :class_level, placeholder: 'Class Level'%>
+  </div>
+
+  <div class="form">
+    <%= f.label :description%><br>
+    <%= f.text_area :description, placeholder: 'Tell us about your character'%>
+  </div>
+
+  <div class="form">
+  <label>Select Your Character's Adventure</label>
+   <p><%=f.collection_select :campaign_id, Campaign.all, :id, :title, include_blank: true%></p>
+  </div>
+
+  <h3>Or Create an Adventure</h3>
+
+  <div class="form">
+    <%=f.fields_for :campaign, Campaign.new do |campaign_fields|%>
+    
+    
+    <div class="form">
+    <%= campaign_fields.label :title%><br>
+    <%= campaign_fields.text_field :title, placeholder: "Campaign Title or Group Name"%>
+    </div>
+
+<div class="form">
+    <%= campaign_fields.label :adventure_path%><br>
+    <%= campaign_fields.text_field :adventure_path, placeholder: "Adventure Path"%>
+</div>
+
+<div class="form">
+    <%= campaign_fields.label :looking_for_players%>?
+    <%= campaign_fields.check_box :looking_for_players%>
+</div>
+
+<%= campaign_fields.hidden_field :user_id, value: current_user.id%>
+
+    <%end%>
+
+  </div>
+  
+    
+    <%= f.submit %>
+    
+<%end%>
