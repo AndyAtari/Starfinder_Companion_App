@@ -4,6 +4,7 @@
 <tr>
 <th>Name</th>
 <th>Tier</th>
+<th>Campaign</th>
 <th><i class="material-icons" style="font-size:25px;color:red">mode_edit</i>Edit</th>
 </tr>
 
@@ -12,6 +13,7 @@
 <tr>
     <td><%=starship.name%></td>
     <td><%= starship.tier%></td>
+    <td><%= link_to "#{starship.campaign.title}", campaign_path(starship.campaign)%>
     <td><%= link_to "Update/Delete", edit_starship_path(starship)%></td>
 </tr>
 <%end%>
