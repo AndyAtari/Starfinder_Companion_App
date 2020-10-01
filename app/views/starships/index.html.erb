@@ -8,7 +8,7 @@
 </tr>
 
 
-<%@starships.each do |starship|%>
+<%@starships.group(:name).each do |starship|%>
 <tr>
     <td><%=starship.name%></td>
     <td><%= starship.tier%></td>

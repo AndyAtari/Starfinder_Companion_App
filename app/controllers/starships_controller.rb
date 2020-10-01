@@ -44,7 +44,8 @@ class StarshipsController < ApplicationController
     private
 
     def set_starship
-        @starship = current_user.starships.find(params[:id])
+        @starship = current_user.starships.find_by(id: params[:id])
+        redirect_to root_path unless @starship 
     end
 
     def starship_params
