@@ -48,7 +48,8 @@ class CampaignsController < ApplicationController
     private
 
     def set_campaign
-        @campaign = current_user.campaigns.find(params[:id])
+        @campaign = Campaign.find_by(id: params[:id])
+        redirect_to root_path unless @campaign 
     end
 
     def campaign_params

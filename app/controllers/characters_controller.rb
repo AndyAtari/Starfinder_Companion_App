@@ -38,8 +38,8 @@ class CharactersController < ApplicationController
     private
 
     def set_character
-        @character = Character.find(params[:id])
-        redirect_to root_path unless current_user.id == @character.user_id 
+        @character = Character.find_by(id: params[:id])
+        redirect_to root_path unless @character && current_user.id == @character.user_id 
     end
 
     def character_params
