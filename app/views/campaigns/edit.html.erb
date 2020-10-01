@@ -1,39 +1,5 @@
-<h1>Edit Campaign</h1>
+<h1>EDIT CAMPAIGN</h1>
 
-<% if @campaign.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:
-      </h2>
-
-      <ol>
-      <% @campaign.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ol>
-    </div>
-  <% end %>
-
-<%=form_for(@campaign) do |f| %>
-
-<div class="form">
-    <%= f.label :title%><br>
-    <%= f.text_field :title%>
-</div>
-
-<div class="form">
-    <%= f.label :adventure_path%><br>
-    <%= f.text_field :adventure_path%>
-</div>
-
-<div class="form">
-    <%= f.label :looking_for_players%>?
-    <%= f.check_box :looking_for_players%>
-</div>
-
-
-<%=f.submit%>
-
-<%end%>
+<%= render 'form'%>
 
 <%= button_to("Delete Campaign", @campaign, {:onclick => "return confirm('Are you sure?')", :method => :delete, :remote => true}) %>

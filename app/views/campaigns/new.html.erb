@@ -1,38 +1,3 @@
 <h1>START A CAMPAIGN</h1>
 
-<% if @campaign.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:
-      </h2>
-
-      <ol>
-      <% @campaign.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ol>
-    </div>
-  <% end %>
-
-
-<%=form_for(@campaign) do |f| %>
-
-<div class="form">
-    <%= f.label :title%><br>
-    <%= f.text_field :title, placeholder: "Campaign Title or Group Name"%>
-</div>
-
-<div class="form">
-    <%= f.label :adventure_path%><br>
-    <%= f.text_field :adventure_path, placeholder: "Adventure Path"%>
-</div>
-
-<div class="form">
-    <%= f.label :looking_for_players%>?
-    <%= f.check_box :looking_for_players%>
-</div>
-
-
-<%=f.submit%>
-
-<%end%>
+<%= render 'form'%>
