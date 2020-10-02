@@ -14,7 +14,11 @@
     <td><%=starship.name%></td>
     <td><%= starship.tier%></td>
     <td><%= link_to "#{starship.campaign.title}", campaign_path(starship.campaign)%>
+    <% if current_user.id == starship.campaign.user_id%>
     <td><%= link_to "Update/Delete", edit_starship_path(starship)%></td>
+    <%else%>
+    <td>N/A</td>
+    <%end%>
 </tr>
 <%end%>
 </table>
