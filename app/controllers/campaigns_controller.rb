@@ -3,7 +3,11 @@ class CampaignsController < ApplicationController
     
     
     def index
-        @campaigns = current_user.campaigns 
+        if params[:search]
+            @campaigns = Campaign.search(params[:search])
+        else  
+            @campaigns = current_user.campaigns 
+        end
     end
 
     def show
@@ -58,6 +62,7 @@ class CampaignsController < ApplicationController
             :looking_for_players, 
             :status,
             :user_id,
+            :search,
             character_ids: []
         )
     end

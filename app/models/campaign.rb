@@ -13,4 +13,8 @@ class Campaign < ApplicationRecord
         end
     end
 
+    def self.search(query)
+        where("title like ?", "%#{query}%")
+    end
+
 end

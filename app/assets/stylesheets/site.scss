@@ -71,11 +71,26 @@ img {
 
 Div.container {
   text-align: center;
-  padding: 310px;
+  padding: 315px;
   margin-top: 0px;
   color: white;
   background-image: url('/starfinder_ship.jpg');
 }
+
+input[type=search] {
+  width: 25%;
+  height: auto;
+  background-color: #f2f2f2;
+  color: #414a4c;
+  padding: 14px 20px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
 
 .footer {
   text-align: center;
