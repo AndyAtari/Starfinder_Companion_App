@@ -12,6 +12,8 @@
     </h2>
 </div>
 
+<% if @campaign.user_id == current_user.id%>
+
 <h3>Add a Starship?</h3>
 
 <% if @starship.errors.any? %>
@@ -33,3 +35,5 @@
    <%= render partial: 'starships/form', locals: {f: f}%>
 
 <%end%>
+
+ <%end%>
