@@ -4,7 +4,7 @@
         <td><%= campaign.adventure_path%></td>
         <td>
         <% campaign.characters.each do |character|%>
-                <%if character.user_id == current_user.id%>
+                <%if owned?(character)%>
                     <p><%= link_to character.name, character_path(character)%></p>
                 <%else%>
                     <p><%=character.name%></p>
@@ -12,15 +12,15 @@
         <%end%>
         </td>
         <td>
-        <p><%= campaign.starships.count%></p>
-            <%if !campaign.starships.empty?%>
+        <p><%= starship_count(campaign)%></p>
+            <%if starships?(campaign)%>
         <p><%= link_to "View Ships", campaign_starships_path(campaign)%></p>
             <%end%>
-            <% if current_user.id == campaign.user_id %>
+            <% if owned?(campaign) %>
         <p><%= link_to "Add a Ship", campaign_path(campaign)%></p>
             <%end%>
         </td>
-            <%if campaign.user_id == current_user.id%>
+            <%if owned?(campaign)%>
             <td><%= link_to "Update/Delete", edit_campaign_path(campaign)%></td>
             <%else%>
                 <td>N/A</td>
