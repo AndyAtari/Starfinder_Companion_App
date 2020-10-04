@@ -10,35 +10,6 @@
 <th>Looking For Players</th>
 </tr>
 
-<% campaign_order.each do |campaign|%>
-    <tr>
-        <td><%= link_to campaign.title, campaign_path(campaign)%></td>
-        <td><%= campaign.adventure_path%></td>
-        <td>
-        <% campaign.characters.each do |character|%>
-                <%if character.user_id == current_user.id%>
-                    <p><%= link_to character.name, character_path(character)%></p>
-                <%else%>
-                    <p><%=character.name%></p>
-                <%end%>
-        <%end%>
-        </td>
-        <td>
-        <p><%= campaign.starships.count%></p>
-            <%if !campaign.starships.empty?%>
-        <p><%= link_to "View Ships", campaign_starships_path(campaign)%></p>
-            <%end%>
-            <% if current_user.id == campaign.user_id %>
-        <p><%= link_to "Add a Ship", campaign_path(campaign)%></p>
-            <%end%>
-        </td>
-            <%if campaign.user_id == current_user.id%>
-            <td><%= link_to "Update/Delete", edit_campaign_path(campaign)%></td>
-            <%else%>
-                <td>N/A</td>
-            <%end%>
-        <td><%= campaign.need_players?%></td>
-    </tr>
-<%end%>
+<%= render 'campaign_table'%>
 
 </table>
