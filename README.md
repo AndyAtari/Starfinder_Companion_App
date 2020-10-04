@@ -8,7 +8,7 @@ This project was created for Flatiron Portfolio Project Assessment and was made 
 
 ## Motivation 
 
-Since many rpg sessions are now virtual, it is my desire for Starfinder players to have all their stats and campaign information digitally available. I hope players can use the application to connect with friends to plan and strategize their next space odyssey.   
+Since many RPG sessions are now virtual, it is my desire for Starfinder players to have all their stats and campaign information digitally available. I hope players can use the application to connect with friends to plan and strategize their next space odyssey.   
 
 ## Installation
 
