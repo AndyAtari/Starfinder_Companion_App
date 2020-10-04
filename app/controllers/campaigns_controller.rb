@@ -1,5 +1,5 @@
 class CampaignsController < ApplicationController
-    before_action :set_campaign, only: [:show, :edit, :update, :destroy] 
+    before_action :set_campaign, only: [:edit, :update, :destroy] 
     
     
     def index
@@ -11,6 +11,7 @@ class CampaignsController < ApplicationController
     end
 
     def show
+        @campaign = Campaign.find_by(id: params[:id])
         @starship = @campaign.starships.build
     end
 
@@ -19,7 +20,6 @@ class CampaignsController < ApplicationController
     end
 
     def edit
-        redirect_to root_path unless current_user.id == @campaign.user_id 
     end
 
     def create 
@@ -32,28 +32,20 @@ class CampaignsController < ApplicationController
     end
 
     def update
-        if current_user.id == @campaign.user_id
             @campaign.update(campaign_params)
             redirect_to campaigns_path
-        else  
-            redirect_to root_path
-        end
     end
 
     def destroy
-        if current_user.id == @campaign.user_id
             @campaign.destroy
             redirect_to campaigns_url 
-        else  
-            redirect_to root_path
-        end
     end
 
     private
 
     def set_campaign
         @campaign = Campaign.find_by(id: params[:id])
-        redirect_to root_path unless @campaign 
+        redirect_to root_path unless @campaign && current_user.id == @campaign.user_id
     end
 
     def campaign_params
